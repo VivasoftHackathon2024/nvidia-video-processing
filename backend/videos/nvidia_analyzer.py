@@ -128,7 +128,7 @@ class NvidiaAnalyzer:
             ]
 
             payload = {
-                "max_tokens": 2048,
+                "max_tokens": 8192,
                 "temperature": 0.2,
                 "top_p": 0.7,
                 "seed": 50,

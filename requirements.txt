@@ -6,3 +6,10 @@ python-dotenv
 psycopg2-binary
 cloudinary
 moviepy
+
+langchain-text-splitters 
+langchain-community 
+langchain-openai
+langchain-postgres
+langchain-core
+langgraph

@@ -1,4 +1,8 @@
-:root {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -11,7 +15,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+} */
 
 a {
   font-weight: 500;
@@ -28,11 +32,63 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+}
+
+.container-transition {
+  transition: right 0.3s ease-in-out;
+  left: 960px;
+  height: 100vh;
+}
+
+.container-transition.container-with-chat {
+  left: 0px;
+}
+
+.analysis-summary-container::-webkit-scrollbar {
+  display: none;
+}
+
+.chat-interface {
+  position: fixed;
+  right: -600px;
+  top: 0;
+  width: 600px;
+  height: 100vh;
+  background-color: #f8f9fa;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease-in-out;
+  padding: 20px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.chat-interface.open {
+  right: 0;
+}
+
+.chat-interface *::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-interface *::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.chat-interface *::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 3px;
+}
+
+.chat-interface *::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 button {
@@ -54,6 +110,8 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -66,3 +124,5 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+
